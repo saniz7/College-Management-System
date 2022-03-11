@@ -4,13 +4,17 @@
         <link rel="stylesheet" href="style.css">     
     </head>
     <body>
-      <?php include 'navbar.php';?>
+          <?php include 'navbar.php';?>
+          <?php 
+          session_start();
+          $a=$_SESSION["username"];
+          echo $a;
+          ?>
           <div class="services" id="services">
                 <!-- <h1>Warm welcome</h1> -->
                 <div class="services__wrapper">
                   <div class="card" >
-                    <!-- <img src="img.svg/result.svg" alt="result"> -->
-                    <h2>RESULT</h2>
+                        <h2>RESULT</h2>
                     <div class="card__btn"><button><a href="result.php"class="button__link">View Result</a></button></div>
                   </div>
                   <div class="card">

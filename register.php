@@ -55,7 +55,7 @@ if($num==1){
 }else{
     $reg="insert into usertable(name,password) values ('$name','$password')";
     mysqli_query($con,$reg);
-    header('location:login.php');
+    header('location:index.php');
 }
 ?>
 

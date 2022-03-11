@@ -38,7 +38,7 @@
                 </form>
             <div class="card_footer">
                 Already have an account?
-                <a href="login.php"><button id="redirect" value="Login Here">Login Here</button></a>
+                <a href="index.php"><button id="redirect" value="Login Here">Login Here</button></a>
             </div>
         </section>
     </div>    

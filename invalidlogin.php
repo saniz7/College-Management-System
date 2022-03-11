@@ -30,8 +30,9 @@
                 <h3 >Invalid credentials.</h3>
             </div>
             <div class="card_footer">
-                Invalid Login. Login again.
+                Invalid Login. Login or register.
                 <a href="index.php"><button id="redirect" value="Login Here">Login Here</button></a>
+                <a href="registration.php"><button id="redirect" value="Login Here">Register Here</button></a>
             </div>
         </section>
     </div>    

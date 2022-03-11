@@ -5,7 +5,7 @@
     </head>
     <body style="background-image: url(images/vault.svg);
     background-size: 105%;">
-         <?php include 'navbar.php';?>
+    <?php include 'navbar.php';?>
          <table class="content-table">
         <thead>
           <tr>

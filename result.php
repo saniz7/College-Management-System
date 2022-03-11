@@ -5,79 +5,60 @@
     </head>
     <body style="background-image: url(images/project.svg);
     background-size: 200%;">
-         <?php include 'navbar.php';?>
+    <?php include 'navbar.php';?>
 
+         <?php
 
-          <?php
-session_start();
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "register";
 
-$con=mysqli_connect("localhost","root","");
-mysqli_select_db($con,"register");
-$number=$_POST["number"];
-$s="select * from grade where number = '$number'";
-$result=mysqli_query($con,$s);
-$num = mysqli_num_rows($result);
+  // Create connection
+  $conn = mysqli_connect($servername, $username, $password, $dbname);
+  // Check connection
+  if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+  }
 
-echo $num;
+  $sql = "SELECT id, name, marks FROM marks";
+  $result = mysqli_query($conn, $sql);
 
-?>
+  if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
 
+        echo "<table class='content-table'><table border='1'>
 
-        <table class="content-table">
         <thead>
-          <tr>
-            <th>Credit Hour</th>
-            <th>Course code</th>
-            <th>Course name</th>
-            <th>Grade</th>
-            <th>Remarks</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>3</td>
-            <td>ELX 212</td>
-            <td>Logic Circuit</td>
-            <td>A-</td>
-            <td>should work harder</td>
-          </tr>
-          <tr class="active-row">
-            <td>3</td>
-            <td>MTH 114</td>
-            <td>Engineering Mathematics II</td>
-            <td>B</td>
-            <td>should work harder</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>ELX 213</td>
-            <td>Electronic Circuit and Instrumentation</td>
-            <td>A</td>
-            <td>Good</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>CMP 225</td>
-            <td>Data Structure and Algorithms</td>
-            <td>A-</td>
-            <td>should work harder</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>CMP 213</td>
-            <td>Web Technology</td>
-            <td>A</td>
-            <td>Good,Dont stop learning</td>
+<tr>
+<th>Id</th>
+<th>Subject Name</th>
+<th>Marks</th>
+</tr></thead>";
 
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>MTH 221</td>
-            <td>Probability and Queuing Theory</td>
-            <td>B</td>
-            <td>should work harder</td>
-          </tr>
-        </tbody>
-      </table>
+ 
+
+
+  echo "<tr>";
+
+  echo "<td>" . $row['id'] . "</td>";
+
+  echo "<td>" . $row['name'] . "</td>";
+
+  echo "<td>" . $row['marks'] . "</td>";
+
+  echo "</tr>";
+
+
+echo "</table>";
+
+    }
+  } else {
+    echo "0 results";
+  }
+
+  mysqli_close($conn);
+  ?>
       <?php include'footer.php';?>
 </body>

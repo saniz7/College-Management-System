@@ -5,7 +5,7 @@
     </head>
     <body style="background-image: url(images/assignment.svg);
     background-size: 50%;">
-       <?php include 'navbar.php';?>
+    <?php include 'navbar.php';?>
           <table class="content-table">
         <thead>
           <tr>
